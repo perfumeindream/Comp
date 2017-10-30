@@ -41,7 +41,8 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("버튼말고 다른거구먼", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string type = sender.GetType().ToString();
+                MessageBox.Show("버튼말고 다른거구먼 " + type , "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
