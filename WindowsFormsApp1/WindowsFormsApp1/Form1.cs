@@ -22,22 +22,44 @@ namespace WindowsFormsApp1
 
         private void Event(object sender, EventArgs e)
         {
-            if (sender.GetType().Equals(typeof(Button)))
+            if (sender is Button)
             {
+                Button seledBtn = sender as Button;
                 if (!sw)
                 {
                     MessageBox.Show("버튼이구만~!!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    button1.Text = "누르면터짐";
+                    seledBtn.Text = "누르면터짐";
                     sw = true;
                 }
                 else
                 {
                     this.WindowState = FormWindowState.Maximized;
                     sw = false;
-                    MessageBox.Show("뻥!!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.Text = "뻥~! X.X";
+                    MessageBox.Show("엌!!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Close();
                 }
 
+            }
+            else if(sender is CheckBox)
+            {
+                CheckBox selectedCB = sender as CheckBox;
+                if (selectedCB.Name == "checkBox1")
+                {
+                    if (selectedCB.Checked)
+                        textBox1.PasswordChar = '\0';
+                    else
+                        textBox1.PasswordChar = '★';                    
+                }
+            }
+            else if (sender is TextBox)
+            {
+                TextBox SeledTB = sender as TextBox;
+                if (SeledTB.TextLength == 0)
+                {
+                    MessageBox.Show(SeledTB.Name.ToString() + "입력안됨요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
             else
             {
