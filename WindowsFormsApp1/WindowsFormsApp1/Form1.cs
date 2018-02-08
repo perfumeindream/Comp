@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        //shtpi테스트
         List<string> MemberID;
         MySqlConnection conn;//DB 연동을 위한 객체 생성
         private bool sw = false;//클릭 이벤트 토글 점검용 객체
