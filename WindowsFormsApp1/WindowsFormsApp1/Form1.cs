@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
         #region DB 쓰기
         private void DB_Write(string ID, string PW)
         {
-
+            //DB관련 작업 이후 구현예정
         }
         #endregion
 
@@ -132,6 +132,7 @@ namespace WindowsFormsApp1
             {
                 string type = sender.GetType().ToString();
                 MessageBox.Show("이거슨 " + type + "군!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
